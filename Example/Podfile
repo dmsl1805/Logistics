@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Logistics_Example' do
+  pod 'Logistics', :path => '../'
+
+  target 'Logistics_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
