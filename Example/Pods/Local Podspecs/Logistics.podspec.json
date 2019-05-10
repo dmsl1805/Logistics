@@ -1,0 +1,22 @@
+{
+  "name": "Logistics",
+  "version": "0.1.0",
+  "summary": "A short description of Logistics.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Dmytro Shulzhenko/Logistics",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dmytro Shulzhenko": "dmytro.shulzhenko@gen.tech"
+  },
+  "source": {
+    "git": "https://github.com/Dmytro Shulzhenko/Logistics.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Logistics/Classes/**/*"
+}

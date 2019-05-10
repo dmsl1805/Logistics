@@ -1,0 +1,16 @@
+PODS:
+  - Logistics (0.1.0)
+
+DEPENDENCIES:
+  - Logistics (from `../`)
+
+EXTERNAL SOURCES:
+  Logistics:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Logistics: 619e66d1c75e32812b65fa893ffbe2b85787dd68
+
+PODFILE CHECKSUM: 1ae97a631ea069ac39143f88804ad0c24d3216ed
+
+COCOAPODS: 1.6.1

@@ -22,7 +22,7 @@ pod 'Logistics'
 
 ## Author
 
-Dmytro Shulzhenko, dmytro.shulzhenko@gen.tech
+Dmitry Shulzhenko, dmsl1805@gmail.com
 
 ## License
 

@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Logistics'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Logistics.'
+  s.version          = '0.0.1'
+  s.swift_version    = '5.0'
+  s.summary          = 'TBD. The whole architecture framework. Creates defined way to communicate parts of the app.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,13 +20,14 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
+TBD. The whole architecture framework. Creates defined way to communicate parts of the app.
                        DESC
 
-  s.homepage         = 'https://github.com/Dmytro Shulzhenko/Logistics'
+  s.homepage         = 'https://github.com/dmsl1805/Logistics'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Dmytro Shulzhenko' => 'dmytro.shulzhenko@gen.tech' }
-  s.source           = { :git => 'https://github.com/Dmytro Shulzhenko/Logistics.git', :tag => s.version.to_s }
+  s.author           = { 'Dmitry Shulzhenko' => 'dmsl1805@gmail.com' }
+  s.source           = { :git => 'https://github.com/dmsl1805/Logistics.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
