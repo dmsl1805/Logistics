@@ -2,6 +2,7 @@
 // swiftlint:disable trailing_newline
 // swiftlint:disable file_length
 // swiftlint:disable line_length
+import Logistics
 import RxSwift
 
 {% for type in types.implementing.Dispatcher|struct %}
