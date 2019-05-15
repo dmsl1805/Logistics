@@ -45,5 +45,5 @@ public extension ObservableType {
 }
 
 func logFatal(_ error: Error) {
-    assertionFailure("SafeObserver does not accept errors")
+    assertionFailure("SafeObserver does not accept errors \(error)")
 }

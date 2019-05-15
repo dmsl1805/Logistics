@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Logistics'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.swift_version    = '5.0'
   s.summary          = 'TBD. Under development.'
 
