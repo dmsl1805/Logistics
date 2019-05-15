@@ -30,8 +30,8 @@ extension {{ type.name }} {
         }
         {% for var in state.variables %}
 
-        var {{ var.name }}: Observer<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
-            return Observer(state.{{ var.name }}.asObserver())
+        var {{ var.name }}: SafeObserver<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return SafeObserver(state.{{ var.name }}.asObserver())
         }
         {% endfor %}
     }
@@ -60,8 +60,8 @@ extension {{ type.name }} {
         }
         {% for var in action.variables %}
 
-        var {{ var.name }}: Observer<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
-            return Observer(action.{{ var.name }}.asObserver())
+        var {{ var.name }}: SafeObserver<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return SafeObserver(action.{{ var.name }}.asObserver())
         }
         {% endfor %}
     }
