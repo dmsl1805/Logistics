@@ -37,6 +37,7 @@
 		1955D3450106AB090240DF7FDA2C66FD /* SerialDispatchQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459C1500834188B572FAE6371BEBFD34 /* SerialDispatchQueueScheduler.swift */; };
 		1A63C2E4228C203100C04DE5 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A63C2E3228C203100C04DE5 /* Dispatcher.swift */; };
 		1A63C314228C24F700C04DE5 /* Dispatcher.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 1A63C313228C24F700C04DE5 /* Dispatcher.stencil */; };
+		1A63C31B228C2B4800C04DE5 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A63C31A228C2B4800C04DE5 /* Observer.swift */; };
 		1A8FF858A0C05AB60E5E5823A7B34CBA /* InvocableScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889B41F4C5857071796D83A116E4B96 /* InvocableScheduledItem.swift */; };
 		1AB7B9F224F787B17D823D05B21F4C06 /* Amb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1619A75BFA0C13E79B1DCDFF7680DD /* Amb.swift */; };
 		1B6FAF49BD2666827513CE676C623E6D /* Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8CC18B86C95D3A8A016676DEA33E0 /* Rx.swift */; };
@@ -254,6 +255,7 @@
 		199B5B523A1DAF444DA4B3BDB01FFE6E /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
 		1A63C2E3228C203100C04DE5 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dispatcher.swift; path = Logistics/Classes/Dispatcher.swift; sourceTree = "<group>"; };
 		1A63C313228C24F700C04DE5 /* Dispatcher.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Dispatcher.stencil; path = Logistics/Classes/Dispatcher.stencil; sourceTree = "<group>"; };
+		1A63C31A228C2B4800C04DE5 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		1AB8C09C5DABB919B4FEC9DE2621B3F8 /* Pods-Logistics_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Logistics_Example-frameworks.sh"; sourceTree = "<group>"; };
 		1BA1735EB57D0F62832AC0E3AFF1C214 /* Debounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debounce.swift; path = RxSwift/Observables/Debounce.swift; sourceTree = "<group>"; };
 		1C041AFE192AB12CF72ED21840B0A166 /* ObservableConvertibleType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableConvertibleType.swift; path = RxSwift/ObservableConvertibleType.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 		0AC3FB7BAA528DAA8568AA3BEC76FBFE /* Logistics */ = {
 			isa = PBXGroup;
 			children = (
+				1A63C31A228C2B4800C04DE5 /* Observer.swift */,
 				1A63C313228C24F700C04DE5 /* Dispatcher.stencil */,
 				1A63C2E3228C203100C04DE5 /* Dispatcher.swift */,
 				51D663B2A2D593E5EDB1F4FFD5B90862 /* Pod */,
@@ -984,6 +987,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4513D3DC6BA7165AE8B890C70888EA4 /* Logistics-dummy.m in Sources */,
+				1A63C31B228C2B4800C04DE5 /* Observer.swift in Sources */,
 				1A63C2E4228C203100C04DE5 /* Dispatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
