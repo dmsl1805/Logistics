@@ -1,15 +1,26 @@
 PODS:
-  - Logistics (0.1.0)
+  - Logistics (0.0.1):
+    - RxSwift
+    - Sourcery
+  - RxSwift (5.0.0)
+  - Sourcery (0.16.1)
 
 DEPENDENCIES:
   - Logistics (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxSwift
+    - Sourcery
 
 EXTERNAL SOURCES:
   Logistics:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Logistics: 619e66d1c75e32812b65fa893ffbe2b85787dd68
+  Logistics: a1d4272b2fdcb7ed4213c8415daa376dfc77fe20
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  Sourcery: 16779170d35ee204666843b09031f36721a84bcc
 
 PODFILE CHECKSUM: 1ae97a631ea069ac39143f88804ad0c24d3216ed
 

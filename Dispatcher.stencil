@@ -1,0 +1,115 @@
+// swiftlint:disable superfluous_disable_command
+// swiftlint:disable trailing_newline
+// swiftlint:disable file_length
+// swiftlint:disable line_length
+import RxSwift
+
+{% for type in types.implementing.Dispatcher|struct %}
+extension {{ type.name }} {
+    {% for state in type.containedTypes where state.localName == "State" %}
+    struct ObservableState {
+        private let state: State
+
+        fileprivate init(state: State) {
+            self.state = state
+        }
+            {% for var in state.variables %}
+
+        var {{ var.name }}: Observable<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return state.{{ var.name }}.asObservable()
+        }
+            {% endfor %}
+    }
+
+    struct MutableState {
+        private let state: State
+
+        fileprivate init(state: State) {
+            self.state = state
+        }
+        {% for var in state.variables %}
+
+        var {{ var.name }}: Observer<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return Observer(state.{{ var.name }}.asObserver())
+        }
+        {% endfor %}
+    }
+    {% endfor %}
+    {% for action in type.containedTypes where action.localName == "Action" %}
+
+    struct ObservableAction {
+        private let action: Action
+
+        fileprivate init(action: Action) {
+            self.action = action
+        }
+        {% for var in action.variables %}
+
+        var {{ var.name }}: Observable<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return action.{{ var.name }}.asObservable()
+        }
+        {% endfor %}
+    }
+
+    struct MutableAction {
+        private let action: Action
+
+        fileprivate init(action: Action) {
+            self.action = action
+        }
+        {% for var in action.variables %}
+
+        var {{ var.name }}: Observer<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+            return Observer(action.{{ var.name }}.asObserver())
+        }
+        {% endfor %}
+    }
+    {% endfor %}
+
+    struct StateDispatcher {
+        private let dispatcher: {{ type.name }}
+        let state: ObservableState
+        let action: MutableAction
+
+        fileprivate init(dispatcher: {{ type.name }}) {
+            self.dispatcher = dispatcher
+            state = dispatcher.observableState
+            action = dispatcher.mutableAction
+        }
+    }
+
+    struct ActionDispatcher {
+        private let dispatcher: {{ type.name }}
+        let state: MutableState
+        let action: ObservableAction
+
+        fileprivate init(dispatcher: {{ type.name }}) {
+            self.dispatcher = dispatcher
+            state = dispatcher.mutableState
+            action = dispatcher.observableAction
+        }
+    }
+
+    var observableState: ObservableState {
+        return ObservableState(state: state)
+    }
+    var mutableState: MutableState {
+        return MutableState(state: state)
+    }
+    var observableAction: ObservableAction {
+        return ObservableAction(action: action)
+    }
+    var mutableAction: MutableAction {
+        return MutableAction(action: action)
+    }
+    var stateDispatcher: StateDispatcher {
+        return StateDispatcher(dispatcher: self)
+    }
+    var actionDispatcher: ActionDispatcher {
+        return ActionDispatcher(dispatcher: self)
+    }
+}
+{% if not forloop.last %}
+
+{% endif %}
+{% endfor %}
