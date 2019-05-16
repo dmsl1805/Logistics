@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Logistics'
-  s.version          = '0.0.10'
+  s.version          = '0.1.11'
   s.swift_version    = '5.0'
   s.summary          = 'TBD. Under development.'
 
@@ -43,8 +43,6 @@ ${PODS_ROOT}/Sourcery/bin/sourcery --sources ${PODS_ROOT}/Logistics/Logistics/Cl
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   
-  s.script_phase = { :name => 'Logistics', :script => '' }
-
   s.dependency 'Sourcery'
   s.dependency 'RxSwift', '~> 5'
 end

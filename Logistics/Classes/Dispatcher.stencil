@@ -6,7 +6,7 @@ import Logistics
 import RxSwift
 
 {% for type in types.implementing.Dispatcher|struct %}
-extension {{ type.name }} {
+public extension {{ type.name }} {
     {% for state in type.containedTypes where state.localName == "State" %}
     struct ObservableState {
         private let state: State
