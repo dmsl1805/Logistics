@@ -46,5 +46,5 @@ ${PODS_ROOT}/Sourcery/bin/sourcery --sources ${PODS_ROOT}/Logistics/Logistics/Cl
   s.script_phase = { :name => 'Logistics', :script => '' }
 
   s.dependency 'Sourcery'
-  s.dependency 'RxSwift', '~> 4'
+  s.dependency 'RxSwift', '~> 5'
 end
