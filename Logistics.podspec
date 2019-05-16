@@ -41,7 +41,7 @@ TBD. The whole architecture framework. Creates defined way to communicate parts 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   
-  s.script_phase = { :name => 'Logistics', :script => '${PODS_ROOT}/Sourcery/bin/sourcery --sources ${PODS_ROOT}/Logistics/Logistics/Classes --sources ${SRCROOT} --templates ${PODS_ROOT}/Logistics/Logistics/Classes', :execution_position => :before_compile }
+  s.script_phase = { :name => 'Logistics', :script => '${PODS_ROOT}/Sourcery/bin/sourcery --sources ${PODS_ROOT}/Logistics/Logistics/Classes --sources ${SRCROOT} --templates ${PODS_ROOT}/Logistics/Logistics/Classes --output ${SRCROOT}', :execution_position => :before_compile }
 
   s.dependency 'Sourcery'
   s.dependency 'RxSwift', '~> 5'
