@@ -44,5 +44,5 @@ TBD. The whole architecture framework. Creates defined way to communicate parts 
   s.script_phase = { :name => 'Logistics', :script => '${PODS_ROOT}/Sourcery/bin/sourcery --sources ${PODS_ROOT}/Logistics/Logistics/Classes --sources ${SRCROOT} --templates ${PODS_ROOT}/Logistics/Logistics/Classes' }
 
   s.dependency 'Sourcery'
-  s.dependency 'RxSwift', '~> 4'
+  s.dependency 'RxSwift', '~> 5'
 end
