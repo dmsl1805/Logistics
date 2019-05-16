@@ -14,11 +14,11 @@ public protocol Dispatcher {
     associatedtype State
     associatedtype Action
     
+    // Will be generated
+
     var bag: DisposeBag { get }
     var state: State { get }
     var action: Action { get }
-    
-    // Will be generated
     
     associatedtype ActionDispatcher
     associatedtype StateDispatcher

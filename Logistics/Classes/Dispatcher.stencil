@@ -6,7 +6,11 @@ import Logistics
 import RxSwift
 
 {% for type in types.implementing.Dispatcher|struct %}
-extension {{ type.name }} {
+// sourcery:inline:auto:{{ type.name }}.TemplateName
+    let bag = DisposeBag()
+    let state = State()
+    let action = Action()
+
     {% for state in type.containedTypes where state.localName == "State" %}
     struct ObservableState {
         private let state: State
@@ -109,8 +113,5 @@ extension {{ type.name }} {
     var actionDispatcher: ActionDispatcher {
         return ActionDispatcher(dispatcher: self)
     }
-}
-{% if not forloop.last %}
-
-{% endif %}
+// sourcery:end
 {% endfor %}
