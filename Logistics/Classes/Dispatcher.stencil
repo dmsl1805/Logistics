@@ -16,7 +16,7 @@ import RxSwift
         }
             {% for var in state.variables %}
 
-        var {{ var.name }}: Observable<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+        {% if type.accessLevel == "public" %}public {% endif %}var {{ var.name }}: Observable<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
             return state.{{ var.name }}.asObservable()
         }
             {% endfor %}
@@ -60,7 +60,7 @@ import RxSwift
         }
         {% for var in action.variables %}
 
-        var {{ var.name }}: SafeObserver<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
+        {% if type.accessLevel == "public" %}public {% endif %}var {{ var.name }}: SafeObserver<{% for t in var.typeName.generic.typeParameters %}{{ t.typeName.name }}{% endfor %}> {
             return SafeObserver(action.{{ var.name }}.asObserver())
         }
         {% endfor %}
@@ -69,8 +69,8 @@ import RxSwift
 
     struct StateDispatcher {
         private let dispatcher: {{ type.name }}
-        let state: ObservableState
-        let action: MutableAction
+        {% if type.accessLevel == "public" %}public {% endif %}let state: ObservableState
+        {% if type.accessLevel == "public" %}public {% endif %}let action: MutableAction
 
         fileprivate init(dispatcher: {{ type.name }}) {
             self.dispatcher = dispatcher
