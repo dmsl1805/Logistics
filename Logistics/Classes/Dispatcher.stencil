@@ -7,6 +7,9 @@ import RxSwift
 
 {% for type in types.implementing.Dispatcher|struct %}
 {% if type.accessLevel == "public" %}public {% endif %}extension {{ type.name }} {
+    typealias StateObserver = (ObservableState, DisposeBag) -> Void
+    typealias ActionObserver = (ObservableAction, DisposeBag) -> Void
+
     {% for state in type.containedTypes where state.localName == "State" %}
     struct ObservableState {
         private let state: State
@@ -89,6 +92,16 @@ import RxSwift
             state = dispatcher.mutableState
             action = dispatcher.observableAction
         }
+    }
+
+    func binded(with observer: StateObserver) -> Self {
+        observer(observableState, bag)
+        return self
+    }
+
+    func binded(with observer: ActionObserver) -> Self {
+        observer(observableAction, bag)
+        return self
     }
 
     var observableState: ObservableState {

@@ -30,14 +30,14 @@ public protocol Dispatcher {
 public extension Dispatcher {
     typealias Reducer = (ActionDispatcher, DisposeBag) -> Void
     
-    func reduced(with reducer: Reducer) -> Self {
+    func binded(with reducer: Reducer) -> Self {
         reducer(actionDispatcher, bag)
         return self
     }
     
     typealias Middleware = (StateDispatcher, DisposeBag) -> Void
     
-    func reduced(with middleware: Middleware) -> Self {
+    func binded(with middleware: Middleware) -> Self {
         middleware(stateDispatcher, bag)
         return self
     }
