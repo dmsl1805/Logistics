@@ -94,12 +94,12 @@ import RxSwift
         }
     }
 
-    func binded(with observer: StateObserver) -> Self {
+    func binded(with observer: StateObserver) -> {{ type.name }} {
         observer(observableState, bag)
         return self
     }
 
-    func binded(with observer: ActionObserver) -> Self {
+    func binded(with observer: ActionObserver) -> {{ type.name }} {
         observer(observableAction, bag)
         return self
     }
