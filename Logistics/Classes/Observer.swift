@@ -11,7 +11,7 @@ import RxSwift
 // MARK: Observer
 // Like Any Observer but accepts only next events.
 
-public struct SafeObserver<Element> {
+public final class SafeObserver<Element> {
     private let observer: AnyObserver<Element>
     
     public init(_ observer: AnyObserver<Element>) {
@@ -35,12 +35,14 @@ public extension SafeObserver where Element == Void {
 
 public extension ObservableType {
     func bind(to observer: SafeObserver<Element>) -> Disposable {
-        return bind(to: observer, handleError: { logFatal($0) })
+        bind(to: observer, handleError: { logFatal($0) })
     }
     
-    func bind(to observer: SafeObserver<Element>,
-              handleError: @escaping (Error) -> Void) -> Disposable {
-        return subscribe(onNext: observer.next, onError: handleError)
+    func bind(
+        to observer: SafeObserver<Element>,
+        handleError: @escaping (Error) -> Void
+    ) -> Disposable {
+        subscribe(onNext: observer.next, onError: handleError)
     }
 }
 

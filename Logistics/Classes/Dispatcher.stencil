@@ -5,13 +5,13 @@
 import Logistics
 import RxSwift
 
-{% for type in types.implementing.Dispatcher|struct %}
+{% for type in types.implementing.Dispatcher %}
 {% if type.accessLevel == "public" %}public {% endif %}extension {{ type.name }} {
     typealias StateObserver = (ObservableState, DisposeBag) -> Void
     typealias ActionObserver = (ObservableAction, DisposeBag) -> Void
 
     {% for state in type.containedTypes where state.localName == "State" %}
-    struct ObservableState {
+    final class ObservableState {
         private let state: State
 
         fileprivate init(state: State) {
@@ -25,7 +25,7 @@ import RxSwift
             {% endfor %}
     }
 
-    struct MutableState {
+    final class MutableState {
         private let state: State
 
         fileprivate init(state: State) {
@@ -41,7 +41,7 @@ import RxSwift
     {% endfor %}
     {% for action in type.containedTypes where action.localName == "Action" %}
 
-    struct ObservableAction {
+    final class ObservableAction {
         private let action: Action
 
         fileprivate init(action: Action) {
@@ -55,7 +55,7 @@ import RxSwift
         {% endfor %}
     }
 
-    struct MutableAction {
+    final class MutableAction {
         private let action: Action
 
         fileprivate init(action: Action) {
@@ -70,7 +70,7 @@ import RxSwift
     }
     {% endfor %}
 
-    struct StateDispatcher {
+    final class StateDispatcher {
         private let dispatcher: {{ type.name }}
         {% if type.accessLevel == "public" %}public {% endif %}let state: ObservableState
         {% if type.accessLevel == "public" %}public {% endif %}let action: MutableAction
@@ -82,7 +82,7 @@ import RxSwift
         }
     }
 
-    struct ActionDispatcher {
+    final class ActionDispatcher {
         private let dispatcher: {{ type.name }}
         let state: MutableState
         let action: ObservableAction
